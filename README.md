@@ -1,109 +1,121 @@
-Algoritmos em Grafos (Java)
+---
 
-Este é um projeto acadêmico focado em implementar os algoritmos clássicos de Teoria dos Grafos em Java. O programa é todo controlado por um menu de console, onde você pode criar seus próprios grafos, carregar exemplos e rodar os algoritmos.
+# 🧩 **Algoritmos em Grafos (Java)**
 
-O foco principal aqui não é a performance, mas sim a clareza do código. Optei por usar estruturas de dados mais simples e diretas (como ArrayList) em vez de bibliotecas otimizadas. A ideia é que o código seja didático e fácil de acompanhar.
+Projeto acadêmico desenvolvido para implementar **os algoritmos clássicos de Teoria dos Grafos** em **Java**, com foco em **clareza e didática**, não em performance.
+Todo o programa é controlado por **menu no console**, permitindo **criar grafos**, **carregar exemplos** e **executar algoritmos** interativamente.
 
-🚀 O que o programa faz?
+---
 
-O projeto cobre todos os algoritmos pedidos na avaliação, incluindo buscas de menor caminho e três métodos distintos para encontrar a Árvore Geradora Mínima (MST).
+## 🚀 **Funcionalidades Principais**
 
-1. Encontrar o Menor Caminho
+O projeto cobre os algoritmos exigidos na avaliação, incluindo **buscas de menor caminho** e **três métodos de Árvore Geradora Mínima (MST)**.
 
-    Busca em Largura (BFS)
+### 🧭 1. Menor Caminho
 
-        Para grafos sem peso (Não-Direcionado e Direcionado)
+#### 🔹 **Busca em Largura (BFS)**
 
-    Algoritmo de Dijkstra
+* Aplicável a grafos **sem peso**
+* Funciona em **grafos direcionados e não-direcionados**
 
-        Para grafos com peso (Não-Direcionado e Direcionado)
+#### 🔹 **Algoritmo de Dijkstra**
 
-2. Árvore Geradora Mínima (MST)
+* Aplicável a grafos **ponderados**
+* Compatível com **versões direcionadas e não-direcionadas**
 
-    Algoritmo de Kruskal
+---
 
-    Algoritmo de Prim
+### 🌳 2. Árvore Geradora Mínima (MST)
 
-    Algoritmo Apaga-Reverso (Reverse-Delete)
+* ⚙️ **Kruskal**
+* ⚙️ **Prim**
+* ⚙️ **Apaga-Reverso (Reverse-Delete)**
 
-3. Outras Ferramentas
+---
 
-    Criação e Exibição da Lista de Adjacência
+### 🧰 3. Outras Ferramentas
 
-    Ordenação de Arestas por peso (crescente e decrescente)
+* 🗂️ Criação e exibição da **lista de adjacência**
+* ⚖️ **Ordenação de arestas** por peso (crescente e decrescente)
+* 🧑‍💻 **Criação manual de grafos** pelo console
+* 🧪 **Carga de exemplos prontos** para testes rápidos
 
-    Criação de grafos manualmente pelo console
+---
 
-    Carga de dois grafos de exemplo para testes rápidos
+## 🏛️ **Filosofia do Projeto**
 
-🏛️ Como o projeto foi pensado
+### 💡 1. O “Super Grafo”
 
-A estrutura do projeto se baseia em duas ideias centrais:
+A classe `Grafo.java` foi projetada como um **modelo unificado** — um **Super Grafo** que é **direcionado e ponderado internamente**.
+Os **algoritmos** decidem **como interpretá-lo**.
 
-1. O "Super Grafo"
+| Tipo de Algoritmo | Método Usado              | Interpretação                          |
+| ----------------- | ------------------------- | -------------------------------------- |
+| Não-direcionado   | `getVizinhos(true)`       | Considera arestas em ambos os sentidos |
+| Direcionado       | `getVizinhos(false)`      | Considera apenas as arestas de saída   |
+| Sem peso          | Ignora o peso das arestas | Usado em BFS                           |
 
-Em vez de ter 4 classes diferentes, a classe Grafo.java usa um único modelo de "Super Grafo". Internamente, o grafo é sempre direcionado e com peso.
+---
 
-A mágica acontece nos algoritmos. São eles que decidem como interpretar o grafo:
+### ✏️ 2. Código Didático
 
-    Se o algoritmo é não-direcionado, ele pede os vizinhos usando getVizinhos(true), que olha tanto as setas de saída (A -> B) quanto as de entrada (B -> A).
+O foco é **entendimento, não eficiência**.
+Por isso, o código usa apenas estruturas simples e conhecidas:
 
-    Se o algoritmo é direcionado, ele usa getVizinhos(false) e pega só as setas de saída.
+* `ArrayList`
+* `Queue` (com `LinkedList`)
+* Loops `for` para varreduras manuais
 
-    Se o algoritmo é sem peso (como o BFS), ele simplesmente ignora o peso das arestas.
+📘 *Exemplo:*
+O **Dijkstra** é implementado sem `PriorityQueue`, substituindo-a por um loop simples para escolher o menor custo — isso torna o raciocínio mais visível para quem está aprendendo.
 
-2. Código Didático (ou "Amador")
+---
 
-O objetivo principal é a clareza. Por isso, o código evita estruturas de dados complexas ou otimizadas.
+## 🏃‍♂️ **Como Executar**
 
-    O que foi usado: ArrayList, Queue (com LinkedList) e loops for para fazer buscas.
+### 🔧 Requisitos
 
-Por exemplo, na implementação do Dijkstra, em vez de usar uma PriorityQueue (fila de prioridade) para achar o nó mais próximo, o código faz uma busca manual com um for loop dentro da lista. É uma solução mais lenta, mas é perfeita para entender a lógica do algoritmo passo a passo.
+* Ter o **JDK (Java Development Kit)** instalado.
 
-🏃‍♂️ Como Rodar o Projeto
+### 💻 Clonar e Compilar
 
-    Você vai precisar do JDK (Java Development Kit) instalado.
-
-    Clone o repositório:
-    Bash
-
+```bash
+# Clonar o repositório
 git clone [URL_DO_SEU_REPOSITORIO]
 
-Entre na pasta do projeto e compile os arquivos .java
+# Entrar na pasta do projeto
+cd nome-da-pasta
 
-Bash
-
-# Estando na pasta raiz (a que contém 'uespi')
+# Compilar os arquivos
 javac uespi/trabalho/*.java
 
-Execute a classe principal Trabalho:
+# Executar o programa principal
+java uespi.trabalho.Trabalho
+```
 
-Bash
+O **menu principal** aparecerá no console.
 
-    java uespi.trabalho.Trabalho
+> 💡 Dica: Comece carregando um dos grafos de exemplo (opção 2 ou 3) para testar rapidamente.
 
-    O menu vai aparecer no console. Aconselho carregar um dos grafos de exemplo (Opção 2 ou 3) para começar a testar.
+---
 
-📂 Como os arquivos estão organizados
+## 📂 **Estrutura do Projeto**
 
-O projeto é bem modularizado. Cada algoritmo principal tem seu próprio arquivo:
+| Arquivo                 | Função                                                     |
+| ----------------------- | ---------------------------------------------------------- |
+| `Trabalho.java`      | Ponto de entrada — contém o `main` e o menu principal      |
+| `Grafo.java`         | Estrutura central — define vértices, arestas e utilitários |
+| `BFS.java`           | Implementa a busca em largura e `isGrafoConectado`         |
+| `Dijkstra.java`      | Implementa o algoritmo de Dijkstra                         |
+| `Kruskal.java`       | Implementa o algoritmo de Kruskal                          |
+| `Prim.java`          | Implementa o algoritmo de Prim                             |
+| `ReverseDelete.java` | Implementa o algoritmo Apaga-Reverso                       |
+| `Ordenacao.java`     | Contém a lógica de ordenação e exibição das arestas        |
 
-    Trabalho.java: É o ponto de entrada, onde o main e o menu principal vivem.
+---
 
-    Grafo.java: É o coração do projeto. Define o No (Vértice), a Aresta e todos os métodos para criar e mostrar o grafo.
+## 👨‍💻 **Autor**
 
-    BFS.java: Contém a Busca em Largura (sem peso) e também a função isGrafoConectado que o ReverseDelete usa.
-
-    Dijkstra.java: Contém o Algoritmo de Dijkstra (com peso).
-
-    Kruskal.java: Contém o Algoritmo de Kruskal (MST).
-
-    Prim.java: Contém o Algoritmo de Prim (MST).
-
-    ReverseDelete.java: Contém o Algoritmo Apaga-Reverso (MST).
-
-    Ordenacao.java: Contém a lógica para ordenar e exibir as arestas.
-
-👨‍💻 Autor
-
-    GDK13 (Kevin)
+**GDK13 (Kevin)**
+📚 Estudante de Ciência da Computação
+---
