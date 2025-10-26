@@ -81,7 +81,7 @@ O **Dijkstra** é implementado sem `PriorityQueue`, substituindo-a por um loop s
 
 ```bash
 # Clonar o repositório
-git clone [URL_DO_SEU_REPOSITORIO]
+git clone https://github.com/GDK-13/Grafos-e-Algoritmos
 
 # Entrar na pasta do projeto
 cd nome-da-pasta
