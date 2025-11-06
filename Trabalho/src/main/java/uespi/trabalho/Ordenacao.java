@@ -15,6 +15,8 @@ public class Ordenacao {
     /**
      * Pede ao usuário se quer ver as arestas direcionadas ou não,
      * e depois ordena por peso (crescente e decrescente).
+     * @param sc
+     * @param vertices
      */
     public static void ordenarArestas(Scanner sc, List<No> vertices) {
         System.out.println("\n--- Ordenação de Arestas por Peso ---");

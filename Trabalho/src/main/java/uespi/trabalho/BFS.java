@@ -15,6 +15,9 @@ public class BFS {
 
     /**
      * Encontra o menor caminho (contando arestas, sem peso).
+     * @param ign
+     * @param sc
+     * @param vertices
      */
     public static void menorCaminho_BFS(char ign, Scanner sc, List<No> vertices) {
         System.out.println("\n--- Menor Caminho (BFS) ---");
@@ -35,9 +38,9 @@ public class BFS {
 
         // --- 2. Preparar Estruturas do BFS ---
         
-        // Fila que guarda o caminho completo (uma Lista de Nós)
+        // Fila que guarda o caminho completo
         Queue<ArrayList<No>> filaDeCaminhos = new LinkedList<>();
-        // Lista de nós que já visitou (pra não entrar em loop)
+        // Lista de nós que já visitou
         ArrayList<No> visitados = new ArrayList<>();
 
         // --- 3. Iniciar o Algoritmo ---
@@ -122,6 +125,9 @@ public class BFS {
      * Função especial para o ReverseDelete
      * Verifica se o grafo está "inteiro" (conectado)
      * usando APENAS a lista de arestas que ele recebe.
+     * @param todosOsVertices
+     * @param arestasParaUsar
+     * @return 
      */
     public static boolean isGrafoConectado(List<No> todosOsVertices, List<Aresta> arestasParaUsar) {
         

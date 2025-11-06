@@ -25,7 +25,7 @@ public class Prim {
 
         int numVertices = vertices.size();
 
-        // --- 1. Preparar Estruturas (só com ArrayList) ---
+        // --- 1. Preparar Estruturas ---
 
         // 'custoParaEntrar[i]' guarda o peso da aresta MAIS BARATA
         // para conectar o nó 'i' (que está fora) à árvore.
@@ -146,7 +146,7 @@ public class Prim {
     }
 
     /**
-     * Helper para imprimir a aresta de MST (sem seta).
+     * Helper para imprimir a aresta de MST.
      */
     private static void imprimirArestaMST(Aresta aresta) {
          System.out.println("Aresta [ " + aresta.origem.id + " -- (peso=" + aresta.peso + ") -- " + aresta.destino.id + " ]");

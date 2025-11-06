@@ -10,7 +10,7 @@ import java.util.Set;
 /**
  * Classe que guarda o Grafo.
  * Funciona como um "Super Grafo": armazena sempre como Direcionado e Ponderado.
- * Os algoritmos (BFS, Dijkstra) decidem se querem ignorar a direção ou os pesos.
+ * Os algoritmos decidem se querem ignorar a direção ou os pesos.
  */
 public class Grafo {
 
@@ -22,8 +22,8 @@ public class Grafo {
 
         // Lista de arestas que SAEM deste nó (A -> B)
         public ArrayList<Aresta> arestasSaida = new ArrayList<>();
+        
         // Lista de arestas que ENTRAM neste nó (B -> A)
-        // (Isso é essencial para a função 'ignorarDirecao')
         public ArrayList<Aresta> arestasEntrada = new ArrayList<>();
 
         public No(int id) {
@@ -34,6 +34,8 @@ public class Grafo {
          * Pega os vizinhos de um nó.
          * Se 'ignorarDirecao' for true, ele pega quem eu aponto E quem aponta pra mim.
          * Se for false, pega SÓ quem eu aponto.
+         * @param ignorarDirecao
+         * @return 
          */
         public List<No> getVizinhos(boolean ignorarDirecao) {
             // Usamos um Set aqui só para evitar vizinhos duplicados
@@ -101,6 +103,8 @@ public class Grafo {
 
     /**
      * Método para o usuário digitar o grafo manualmente.
+     * @param sc
+     * @param vertices
      */
     public static void criarGrafoManual(Scanner sc, List<No> vertices) {
         vertices.clear();

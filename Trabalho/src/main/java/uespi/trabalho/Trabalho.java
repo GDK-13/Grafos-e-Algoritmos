@@ -42,7 +42,7 @@ public class Trabalho {
         System.out.println("---               Criação                 ---");
         System.out.println(" 1. Criar Grafo Manualmente");
         System.out.println(" 2. Carregar Grafo de Exemplo (5 nós)");
-        System.out.println(" 3. Carregar Grafo Complexo (7 nós)"); // (Opção Nova)
+        System.out.println(" 3. Carregar Grafo Complexo (7 nós)");
         System.out.println("---           Exibição (Req 01, 02)       ---");
         System.out.println(" 4. Exibir Lista de Adjacência");
         System.out.println("---       Menor Caminho (Req 03-06)       ---");
@@ -75,7 +75,7 @@ public class Trabalho {
             // Criação
             case 1 -> Grafo.criarGrafoManual(sc, grafoAtual);
             case 2 -> Grafo.carregarGrafoExemplo(grafoAtual);
-            case 3 -> Grafo.carregarGrafoComplexo(grafoAtual); // (Opção Nova)
+            case 3 -> Grafo.carregarGrafoComplexo(grafoAtual);
             // Exibição
             case 4 -> Grafo.exibirGrafo(grafoAtual);
             // Menor Caminho (BFS)

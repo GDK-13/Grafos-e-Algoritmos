@@ -16,6 +16,7 @@ public class Kruskal {
      * Encontra a MST:
      * 1. Ordena arestas da mais barata para a mais cara.
      * 2. Adiciona se não formar ciclo.
+     * @param vertices
      */
     public static void mst_Kruskal(List<No> vertices) {
         System.out.println("\n--- Árvore Geradora Mínima (Kruskal) ---");
@@ -92,7 +93,7 @@ public class Kruskal {
     }
     
     /**
-     * Helper para imprimir a aresta de MST (sem seta).
+     * Helper para imprimir a aresta de MST.
      */
     private static void imprimirArestaMST(Aresta aresta) {
          System.out.println("Aresta [ " + aresta.origem.id + " -- (peso=" + aresta.peso + ") -- " + aresta.destino.id + " ]");

@@ -15,6 +15,9 @@ public class Dijkstra {
 
     /**
      * Encontra o caminho com a menor SOMA de pesos.
+     * @param ign
+     * @param sc
+     * @param vertices
      */
     public static void menorCaminho_Dijkstra(char ign, Scanner sc, List<No> vertices) {
         System.out.println("\n--- Menor Caminho (Dijkstra) ---");
@@ -33,7 +36,7 @@ public class Dijkstra {
             return;
         }
 
-        // --- 2. Preparar Estruturas (só com ArrayList) ---
+        // --- 2. Preparar Estruturas ---
         
         // distancias.get(i) guarda a distância do nó vertices.get(i)
         ArrayList<Integer> distancias = new ArrayList<>();

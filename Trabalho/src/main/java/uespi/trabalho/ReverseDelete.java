@@ -18,6 +18,7 @@ public class ReverseDelete {
      * 2. Remove uma aresta.
      * 3. Se o grafo NÃO quebrou (continua conectado), a remoção é permanente.
      * 4. Se quebrou, coloca a aresta de volta.
+     * @param vertices
      */
     public static void mst_ReverseDelete(List<No> vertices) {
         System.out.println("\n--- Árvore Geradora Mínima (Reverse-Delete) ---");
